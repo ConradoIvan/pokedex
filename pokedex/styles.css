@@ -1,0 +1,114 @@
+:root {
+    /* Colores de los tipos */
+    --normal: #A8A77A;
+	--fire: #EE8130;
+	--water: #6390F0;
+	--electric: #F7D02C;
+	--grass: #7AC74C;
+	--ice: #96D9D6;
+	--fighting: #C22E28;
+	--poison: #A33EA1;
+	--ground: #E2BF65;
+	--flying: #A98FF3;
+	--psychic: #F95587;
+	--bug: #A6B91A;
+	--rock: #B6A136;
+	--ghost: #735797;
+	--dragon: #6F35FC;
+	--dark: #705746;
+	--steel: #B7B7CE;
+	--fairy: #D685AD;
+}
+
+/* Estilo de los badge de tipos */
+.badge{
+    border: 1px solid black!important;
+    color: white!important;
+}
+
+/* Estilos para los colores de los badges */
+.badge-normal{
+    background-color: var(--normal)!important;
+}
+.badge-bug{
+    background-color: var(--bug)!important;
+}
+.badge-ice{
+    background-color: var(--ice)!important;
+}
+.badge-fire{
+    background-color: var(--fire)!important;
+}
+.badge-water{
+    background-color: var(--water)!important;
+}
+.badge-electric{
+    background-color: var(--electric)!important;
+}
+.badge-grass{
+    background-color: var(--grass)!important;
+}
+.badge-fighting{
+    background-color: var(--fighting)!important;
+}
+.badge-poison{
+    background-color: var(--poison)!important;
+}
+.badge-ground{
+    background-color: var(--ground)!important;
+}
+.badge-flying{
+    background-color: var(--flying)!important;
+}
+.badge-psychic{
+    background-color: var(--psychic)!important;
+}
+.badge-rock{
+    background-color: var(--rock)!important;
+}
+.badge-ghost{
+    background-color: var(--ghost)!important;
+}
+.badge-dragon{
+    background-color: var(--dragon)!important;
+}
+.badge-dark{
+    background-color: var(--dark)!important;
+}
+.badge-steel{
+    background-color: var(--steel)!important;
+}
+.badge-fairy{
+    background-color: var(--fairy)!important;
+}
+
+/* Div principal */
+#contenido{
+    width: 100%;
+    display: block;
+    padding: 60px;
+    background-image: url('assets/background.jpg');
+    background-repeat: repeat;
+}
+
+/* Estilo para los card con los pokemon que conforman el grid */
+.cardPokemon{
+    width: 18rem;
+    object-fit: cover;
+    border: 3px solid #329589;
+    background-color: whitesmoke;
+    border-radius: 0;
+    margin: 6px;
+    cursor: pointer;
+}
+
+/* Estilo para la imagen de los card con el sprite de los pokemon */
+.imagen_pokemon{
+    border-bottom: 3px solid #329589;
+}
+
+/* Estilo para los body de las card de los pokemon */
+.bodyCardPokemon{
+    background-color: #329589;
+    color: #D2EAEA;
+}

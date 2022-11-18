@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokedex</title>
+        <!-- Librerias necesarias para el funcionamiento de la aplicación -->
+        <link rel="stylesheet" type="text/css" href="libraries/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="libraries/jquery-3.3.1.min.js"></script>
+        <script src="libraries/loading.js"></script>
+        <!-- Script para el funcionamiento de la aplicación -->
+        <script src="script.js"></script>
+        <!-- Hoja de estilos de la aplicación -->
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body id="body">
+        <!-- DIV PRINCIPAL -->
+        <div id="contenido">
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>Pokedex nacional</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-primary btn-paginacion" accion="retroceder">←</button>
+                    <button class="btn btn-primary btn-paginacion" accion="avanzar">→</button>
+                </div>
+            </div>
+
+            <div class="row" id="divPokemon">
+               
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-primary btn-paginacion" accion="retroceder">←</button>
+                    <button class="btn btn-primary btn-paginacion" accion="avanzar">→</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL STATS -->
+        <div class="modal" tabindex="-1" id="modal_stats_pokemon" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="titulo_modal_stats">Pokemon</h5>
+                        <button type="button" class="close" onclick="$('#modal_stats_pokemon').modal('hide')">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <p><b>Stats</b></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>HP</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p class="valor_stat" atributo="hp">0</p>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="progress">
+                                    <div class="progress-bar barra_stat" atributo="hp" role="progressbar" ></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>Ataque</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p class="valor_stat" atributo="attack">0</p>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="progress">
+                                    <div class="progress-bar barra_stat" atributo="attack" role="progressbar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>Defensa</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p class="valor_stat" atributo="defense">0</p>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="progress">
+                                    <div class="progress-bar barra_stat" atributo="defense" role="progressbar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>Ataque especial</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p class="valor_stat" atributo="special-attack">0</p>
+                            </div>
+                            <div class="col-md-5 text-left">
+                                <div class="progress">
+                                    <div class="progress-bar barra_stat" atributo="special-attack" role="progressbar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>Defensa especial</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p class="valor_stat" atributo="special-defense">0</p>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="progress">
+                                    <div class="progress-bar barra_stat" atributo="special-defense" role="progressbar" ></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>Velocidad</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p class="valor_stat" atributo="speed">0</p>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="progress">
+                                    <div class="progress-bar barra_stat" atributo="speed" role="progressbar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>Total</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p id="total_stats">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="$('#modal_stats_pokemon').modal('hide')">Close</button>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL STATS -->
+    </body>
+</html>
